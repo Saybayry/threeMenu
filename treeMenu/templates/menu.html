@@ -1,0 +1,74 @@
+
+  <style type="text/css">
+    .treeMenu{
+        min-width: 200px;
+        max-width: 300px;
+        color: #2f3e46;
+        border: 2px solid #52796f;
+
+    }
+    .treeMenuHeader{
+       min-width: 200px;
+    }
+
+    .theeMenuSect{
+        background-color : #cad2c5;
+    }
+
+
+    .treeMenuSab{
+        margin-left: 15px ;
+    }
+    .treeMenuItem{
+    margin-left: 10px ;
+    }
+
+
+    .treeMenuItem, .treeMenuRoot{
+    min-height: 20px;
+    }
+    .treeMenuHeader{
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding: 10px 10px 10px 10px;
+    }
+    .treeMenuItem {
+    padding: 10px 10px 10px 10px;
+    }
+
+    .treeMenuRoot, .treeMenuRootOpen{
+    border: 2px solid #52796f;
+    margin-top: -2px
+    }
+    .treeMenuRootOpen{
+    }
+
+
+    .treeMenuItem theeMenuSect{
+    }
+
+  </style>
+
+
+<div class="treeMenu">
+    {%for menu_parent_item in filter_menu %}
+        {%if menu_parent_item in  menu_items %}
+        <div class="treeMenuRootOpen">
+        {%else%}
+        <div class="treeMenuRoot">
+        {%endif%}
+
+        <a href= "{{path_url}}?{{other_params}}&{{menu_params}}={{menu_parent_item.pk}}" style="text-decoration: none; color: #000; ">
+            {%if select_menu_item == menu_parent_item.pk  %}
+                <div  class="treeMenuHeader theeMenuSect"  > {{menu_parent_item.name}}  </div>
+            {% else %}
+                <div class="treeMenuHeader">  {{menu_parent_item.name}} </div>
+             {%endif%}
+        </a>
+
+        {%include "menu_item.html" %}
+        </div>
+    {%endfor%}
+</div>

@@ -1,0 +1,15 @@
+    <div class="treeMenuSab"  >
+    {% for el in menu_items %}
+        {%if el.parent == menu_parent_item  %}
+            <a href= "{{path_url}}?{{other_params}}&{{menu_params}}={{el.pk}}" style="text-decoration: none; color: #000; "  class="text" >
+                {%if select_menu_item == el.pk  %}
+                    <div   class="treeMenuItem theeMenuSect " >  {{el}} </div>
+                {% else %}
+                    <div  class="treeMenuItem" > {{el}}  </div>
+                {%endif%}
+            </a>
+            {% include "menu_item.html" with menu_parent_item=el %}
+        {%endif%}
+    {%endfor%}
+    </div>
+

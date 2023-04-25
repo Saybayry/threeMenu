@@ -20,3 +20,4 @@ insert the menu on the page
 ```python
  {% draw_menu 'main_menu' %}
 ```
+![итоговый вид меню](https://i.imgur.com/PW1zBhn.png=10x20)

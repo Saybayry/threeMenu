@@ -1,4 +1,4 @@
-# three menu
+# tree menu
 Create django the menu  without using libraries
 
 add the app to INSTALLED_APPS

@@ -1,8 +1,12 @@
 # tree menu
-Create django the menu  without using libraries
+This is an application for creating a django tree menu without using third-party libraries
+
+upload the application to the project folder
+```
+git clone https://github.com/Saybayry/threeMenu.git
+```
 
 add the app to INSTALLED_APPS
-
 ```python
 INSTALLED_APPS = [
     ...
